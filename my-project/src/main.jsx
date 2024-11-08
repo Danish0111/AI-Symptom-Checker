@@ -9,13 +9,22 @@ import {
 import './index.css'
 import Hero from './Components/Hero.jsx';
 import Navbar from './Components/Navbar.jsx';
+import SymptomSelection from './Components/SymptomSelection.jsx';
+import GenderSelection from './Components/GenderSelection.jsx';
 import SymptomCheck from './Components/SymptomCheck.jsx';
+import AgeInput from './Components/AgeInput.jsx';
+import DiagnosisPage from './Components/DiagnosisPage.jsx';
+
 
 const Layout = () => (
   <>
-    <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div></div>
+    <div className="min-h-screen relative">
+    <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>
+    </div>
     <Navbar />
-    <Outlet/>
+    <Outlet />
+  </div>
   </>
 )
 const router = createBrowserRouter([
@@ -31,6 +40,22 @@ const router = createBrowserRouter([
         path: "/symptom-check",
         element: <SymptomCheck />,
       },
+      {
+        path: "/gender",
+        element: <GenderSelection />,
+      },
+      {
+        path: "/age",
+        element: <AgeInput />,
+      },
+      {
+        path: "/symptom-selection",
+        element: <SymptomSelection/>,
+      },
+      {
+        path: "/diagnosis",
+        element: <DiagnosisPage />,
+      },
     ]
   },
 ]);
@@ -40,3 +65,5 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </StrictMode>,
 )
+
+// export default router;
