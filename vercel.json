@@ -1,6 +1,34 @@
 {
     "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/symptom-check",
+            "dest": "/"
+        },
+        {
+            "src": "/gender",
+            "dest": "/"
+        },
+        {
+            "src": "/age",
+            "dest": "/"
+        },
+        {
+            "src": "/symptom-selection",
+            "dest": "/"
+        },
+        {
+            "src": "/diagnosis",
+            "dest": "/"
+        }
     ]
-  }
-  
+}
