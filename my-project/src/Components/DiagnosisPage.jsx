@@ -38,9 +38,11 @@ const SymptomCheck = ({ gender = "male", age = 25, symptoms = [] }) => {
     }
   };
 
-  const handleFollowUpAnswer = (itemId, choiceId) => {
-    const updatedSymptoms = [...selectedSymptoms, { id: itemId, choice_id: choiceId }];
+  const handleFollowUpAnswer = (answerId) => {
+    const updatedSymptoms = [...selectedSymptoms, answerId];
     setSelectedSymptoms(updatedSymptoms);
+
+    // Re-initiate diagnosis with updated evidence
     initiateDiagnosis();
   };
 
@@ -49,8 +51,8 @@ const SymptomCheck = ({ gender = "male", age = 25, symptoms = [] }) => {
   }, [selectedSymptoms]);
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4">Symptom Checker</h2>
+    <div className="max-w-2xl mx-auto p-4 sm:p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-4 text-center sm:text-left">Symptom Checker</h2>
       {error && <p className="text-red-600">{error}</p>}
 
       <div className="mt-4">
@@ -79,7 +81,7 @@ const SymptomCheck = ({ gender = "male", age = 25, symptoms = [] }) => {
                       <button 
                         key={choice.id} 
                         onClick={() => handleFollowUpAnswer(item.id, choice.id)}
-                        className="mr-2 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 transition duration-200"
+                        className="block w-full sm:w-auto mr-0 sm:mr-2 mb-2 sm:mb-0 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 transition duration-200"
                       >
                         {choice.label}
                       </button>
@@ -96,7 +98,7 @@ const SymptomCheck = ({ gender = "male", age = 25, symptoms = [] }) => {
                       <button 
                         key={choice.id} 
                         onClick={() => handleFollowUpAnswer(item.id, choice.id)}
-                        className="mr-2 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 transition duration-200"
+                        className="block w-full sm:w-auto mr-0 sm:mr-2 mb-2 sm:mb-0 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 transition duration-200"
                       >
                         {choice.label}
                       </button>
@@ -113,7 +115,7 @@ const SymptomCheck = ({ gender = "male", age = 25, symptoms = [] }) => {
                       <button 
                         key={choice.id} 
                         onClick={() => handleFollowUpAnswer(item.id, choice.id)}
-                        className="mr-2 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 transition duration-200"
+                        className="block w-full sm:w-auto mr-0 sm:mr-2 mb-2 sm:mb-0 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 transition duration-200"
                       >
                         {choice.label}
                       </button>

@@ -40,22 +40,6 @@ const router = createBrowserRouter([
         path: "/symptom-check",
         element: <SymptomCheck />,
       },
-      {
-        path: "/gender",
-        element: <GenderSelection />,
-      },
-      {
-        path: "/age",
-        element: <AgeInput />,
-      },
-      {
-        path: "/symptom-selection",
-        element: <SymptomSelection/>,
-      },
-      {
-        path: "/diagnosis",
-        element: <DiagnosisPage />,
-      },
     ]
   },
 ]);
