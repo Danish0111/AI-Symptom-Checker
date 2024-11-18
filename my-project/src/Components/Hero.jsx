@@ -14,7 +14,7 @@ const Hero = () => {
       <h1 className="text-center pt-10 text-2xl md:text-3xl font-semibold w-full md:w-1/2">
         Check Your Symptoms & Get AI-Powered Health Answers
       </h1>
-      <div className="flex flex-col md:flex-row justify-center items-center mt-6">
+      <div className="flex flex-col md:flex-row justify-center items-center ">
         <div className="image flex justify-center">
           <img className="w-40 md:w-80" src={doc} alt="Doctor" />
         </div>
